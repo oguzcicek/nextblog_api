@@ -69,8 +69,6 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost:3001' }
   config.hosts = [
-    "admin.clubgamefi.com",
-    "clubgamefi.com",
-    "www.clubgamefi.com",
+    "admin.clubgamefi.com"
   ]
 end
