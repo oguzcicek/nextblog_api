@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       resources :posts do
         resources :post_comments , only: [:create]
       end
+      resources :games, only: [:index,:show]
+      resources :post_categories, only: [:index,:show]
       get 'get_by_category/:category_slug', to: 'posts#get_by_category'
       get 'get_by_game/:game_slug', to: 'posts#get_by_game'
     end
