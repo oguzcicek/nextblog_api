@@ -4,7 +4,11 @@ class PostSerializer < BaseSerializer
   attribute :created_at do |object|
       object.created_at.strftime("%B %d, %Y")
   end
-  
+
+  attribute :updated_at do |object|
+      object.updated_at.strftime("%B %d, %Y")
+  end
+
   attribute :category_name do |object|
     if object.post_category.present?
      object.post_category.name
