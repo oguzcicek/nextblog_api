@@ -1,7 +1,7 @@
 class Api::V1::PostsController < Api::V1::BaseController
 
   def index
-    per_page = params[:per_page].present? ? params[:per_page].to_i : 30
+    per_page = params[:per_page].present? ? params[:per_page].to_i : 10
     current_page = params[:page].present? ? params[:page].to_i : 1
     posts = Post.where(status: 1).order(updated_at: :desc).page(current_page).per(per_page)
     options = pagination_data(posts, per_page)
@@ -14,7 +14,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   end
 
   def get_by_category
-    per_page = params[:per_page].present? ? params[:per_page].to_i : 30
+    per_page = params[:per_page].present? ? params[:per_page].to_i : 10
     current_page = params[:page].present? ? params[:page].to_i : 1
     category = PostCategory.where(slug: params[:category_slug]).first
     if category.present?
@@ -25,7 +25,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   end
 
   def get_by_game
-    per_page = params[:per_page].present? ? params[:per_page].to_i : 30
+    per_page = params[:per_page].present? ? params[:per_page].to_i : 10
     current_page = params[:page].present? ? params[:page].to_i : 1
     game = Game.where(slug: params[:game_slug]).first
     if game.present?
