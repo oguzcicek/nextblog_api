@@ -70,11 +70,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3001' }
   config.hosts = [
     "127.0.0.1",
-    "127.0.0.1:3000",
-    "127.0.0.1:3001",
     "localhost",
     "localhost:3001",
-    "localhost:3000",
     "admin.clubgamefi.com"
   ]
 end
